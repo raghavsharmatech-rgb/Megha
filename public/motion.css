@@ -151,3 +151,20 @@ html.tab-hidden *{animation-play-state:paused!important}
 @media(max-width:800px){.brand-logo{width:190px}.header nav{gap:15px}}
 @media(max-width:620px){.brand-logo{width:165px}.header{gap:10px}.header>.button{gap:10px;padding-inline:10px}.brand-footer{margin:24px 0}.brand-footer img{max-height:none}}
 @media(max-width:370px){.brand-logo{width:145px}.header{gap:8px}}
+
+/* A separate real-estate chapter, with an opt-in property reel. */
+.realtor-project{display:grid;grid-template-columns:.85fr 1fr;gap:90px;align-items:center;margin-top:80px;padding:68px 70px;background:#e2e5db;border:1px solid #c6cbbd;border-radius:5px}
+.realtor-reel{max-width:330px;width:100%;justify-self:center}
+.realtor-reel .reel-frame{border-radius:5px;border:8px solid #f9f4ee}
+.realtor-reel figcaption{padding-inline:5px}
+.realtor-copy .project-name{margin-bottom:35px}
+.client-monogram{display:grid;place-items:center;width:44px;height:44px;border:1px solid #9da68f;border-radius:50%;font-family:var(--serif);font-size:20px;color:#46513d}
+.realtor-headline{font-family:var(--serif);font-size:clamp(44px,4.6vw,67px);line-height:1.04;letter-spacing:-.045em}
+.realtor-headline em{color:#5a694c}
+.realtor-description{max-width:330px;font-size:14px;color:var(--muted);margin-top:27px}
+.realtor-note{font-size:10px;color:var(--muted);margin-top:25px}
+.realtor-copy .text-link{gap:20px}
+.art-caption{max-width:100%}
+@media(max-width:1100px){.realtor-project{gap:45px;padding:45px}.realtor-headline{font-size:49px}.realtor-description{font-size:13px}}
+@media(max-width:800px){.realtor-project{gap:30px;padding:30px}.realtor-headline{font-size:42px}.realtor-copy .text-link{font-size:11px;gap:10px}.realtor-copy .project-name{margin-bottom:25px}.realtor-description{font-size:12px}}
+@media(max-width:620px){.realtor-project{grid-template-columns:1fr;gap:34px;margin-top:45px;padding:30px 22px}.realtor-copy{grid-row:1}.realtor-headline{font-size:46px}.realtor-description{font-size:13px}.realtor-copy .text-link{font-size:12px}.realtor-reel{max-width:300px}.realtor-reel .reel-play{font-size:11px;padding-bottom:25px}.realtor-reel .reel-play>span{width:56px;height:56px;font-size:18px}.realtor-reel .reel-kicker{font-size:8px}.realtor-reel h4{font-size:25px}.realtor-reel figcaption a{font-size:10px}.project-navigation{gap:17px}.art-caption{font-size:8px}}

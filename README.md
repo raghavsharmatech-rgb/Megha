@@ -23,7 +23,7 @@ The site has not been published to a public domain. A domain, hosting account an
 
 ## Consultation flow
 
-Enquiries are addressed to **jain.megha0104@gmail.com**. Selecting a service prefills the consultation form. The form validates the visitor's information and creates a reviewable email draft. The visitor then chooses **Open email app**, **Copy enquiry**, or **Save enquiry** and sends the email themselves. The website does not send email or store submissions on a server. No enquiries are saved in local storage, cookies, logs or analytics. If JavaScript is unavailable, the email link remains usable and the disabled form cannot submit personal data into the URL.
+Enquiries are addressed to **heybrandstory@gmail.com**. Selecting a service prefills the consultation form. The form validates the visitor's information and creates a reviewable email draft. The visitor then chooses **Open email app**, **Copy enquiry**, or **Save enquiry** and sends the email themselves. The website does not send email or store submissions on a server. No enquiries are saved in local storage, cookies, logs or analytics. If JavaScript is unavailable, the email link remains usable and the disabled form cannot submit personal data into the URL.
 
 Automatic email delivery or appointment scheduling would require a connected form service or booking provider. It is not represented as configured here.
 
@@ -49,7 +49,8 @@ Instagram photos and feedback videos were downloaded from the publicly rendered 
 | `radha-reel.jpg` | https://www.instagram.com/radhafaarms/reel/DdRf6sPgVVN/ |
 | `radha-spiderman-preview.mp4`, `radha-spiderman.jpg` | https://www.instagram.com/radhafaarms/reel/Dcgmk3Zgfma/ |
 | `radha-logo.jpg` | https://www.instagram.com/radhafaarms/ |
-| `stemify-leon.mp4`, `stemify-leon.jpg` | https://www.instagram.com/stemify.ca/reel/DVjdZhuiJUj/ |
+| `stemify-brianna.mp4`, `stemify-brianna.jpg` | https://www.instagram.com/stemify.ca/reel/DUJLYlGCFVH/ |
+| `neha-property.mp4`, `neha-property.jpg` | https://www.instagram.com/nehajainrealtor_/reel/C8E_2lzOumn/ |
 | `stemify-waterloo.mp4`, `stemify-waterloo.jpg` | https://www.instagram.com/stemify.ca/reel/DVbwUa1iNBZ/ |
 | `stemify-logo.jpg` | https://www.instagram.com/stemify.ca/ |
 | `megha-jain.jpg` | https://www.linkedin.com/in/megha-jain-1b14331a2/ |
@@ -73,3 +74,5 @@ The updated visual treatment includes an Allura signature wordmark, floating her
 ## Brand Story identity
 
 The user chose Brand Story as the main website brand. `public/assets/brand-story.svg` is the primary logo, `brand-story-light.svg` is the light version for dark backgrounds, and `brand-story-mark.svg` is the standalone book/conversation symbol and favicon. All lettering is converted to vector paths, so the files work without installed fonts. The optional `scripts/create-logo.py` design utility regenerates them with fontTools; it is not part of the website build or runtime. Existing local font licenses apply to the outlined lettering.
+
+The user added Neha Jain (@nehajainrealtor_) as a client and supplied the featured property reel. The real estate section identifies it as a June 2024 portfolio example and makes no claim about current property availability or pricing. Brianna’s supplied Stemify feedback reel replaces Leon’s card. The consultation address is heybrandstory@gmail.com across links, email drafts, copy instructions and saved enquiries.

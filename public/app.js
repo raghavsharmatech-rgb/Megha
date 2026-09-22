@@ -84,7 +84,7 @@ if ('IntersectionObserver' in window && !motionPreference.matches) {
     if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
   }), {threshold:.12});
   document.querySelectorAll('.service-row').forEach(row => { row.classList.add('reveal-ready'); observer.observe(row); });
-  document.querySelectorAll('.section-intro, .work-heading, .stemify-copy, .portrait-card, .approach-copy h2, .steps li, .consult-copy, .faq h2').forEach(element => {
+  document.querySelectorAll('.section-intro, .work-heading, .stemify-copy, .realtor-copy, .realtor-reel, .portrait-card, .approach-copy h2, .steps li, .consult-copy, .faq h2').forEach(element => {
     element.classList.add('section-reveal');
     observer.observe(element);
   });
@@ -115,7 +115,7 @@ function prepareDraft() {
   const business = String(fields.get('business')).trim();
   const subject = `Social media enquiry: ${business.replace(/[\r\n]+/g, ' ')}`;
   draft = `Hi Megha,\n\nI’d love to talk about social media support for my business.\n\nName: ${name}\nEmail: ${String(fields.get('email')).trim()}\nBusiness / Instagram: ${business}\nSupport: ${fields.get('service')}\n\nMy goals:\n${String(fields.get('goals')).trim()}\n\nThanks,\n${name}`;
-  return `mailto:jain.megha0104@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(draft)}`;
+  return `mailto:heybrandstory@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(draft)}`;
 }
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -128,14 +128,14 @@ form.addEventListener('submit', e => {
   $('#email-result').focus({preventScroll:true});
 });
 $('#copy-enquiry').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText(draft); $('#form-status').textContent = 'Enquiry copied. Paste it into an email to jain.megha0104@gmail.com and send when you’re ready.'; }
+  try { await navigator.clipboard.writeText(draft); $('#form-status').textContent = 'Enquiry copied. Paste it into an email to heybrandstory@gmail.com and send when you’re ready.'; }
   catch { $('#form-status').textContent = 'Your browser could not copy the enquiry. Use Save enquiry to download a text copy instead.'; }
 });
 $('#download-enquiry').addEventListener('click', () => {
-  const url = URL.createObjectURL(new Blob([`To: jain.megha0104@gmail.com\n\n${draft}`], {type:'text/plain;charset=utf-8'}));
+  const url = URL.createObjectURL(new Blob([`To: heybrandstory@gmail.com\n\n${draft}`], {type:'text/plain;charset=utf-8'}));
   const link = document.createElement('a'); link.href = url; link.download = 'my-enquiry-for-megha.txt'; link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-  $('#form-status').textContent = 'Your enquiry file is ready to save. Email its contents to jain.megha0104@gmail.com when you’re ready.';
+  $('#form-status').textContent = 'Your enquiry file is ready to save. Email its contents to heybrandstory@gmail.com when you’re ready.';
 });
 form.addEventListener('input', () => { $('#email-result').hidden = true; });
 $('#form-fields').disabled = false;
