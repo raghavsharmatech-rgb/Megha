@@ -1,6 +1,6 @@
-# Megha
+# Brand Story
 
-A responsive, animated social media consultancy landing page. Plain HTML, CSS and JavaScript, with local images and fonts. No runtime dependencies, API keys or database.
+A responsive, animated social media consultancy landing page for Brand Story, with Megha Jain as the person behind the studio. Plain HTML, CSS and JavaScript, with local images and fonts. No runtime dependencies, API keys or database.
 
 ## Preview
 
@@ -47,9 +47,10 @@ Instagram photos and feedback videos were downloaded from the publicly rendered 
 | `radha-chefs.jpg` | https://www.instagram.com/radhafaarms/p/Ddg92gHDh4h/ |
 | `radha-plate.jpg` | https://www.instagram.com/radhafaarms/p/DdWcYisnB6o/ |
 | `radha-reel.jpg` | https://www.instagram.com/radhafaarms/reel/DdRf6sPgVVN/ |
+| `radha-spiderman-preview.mp4`, `radha-spiderman.jpg` | https://www.instagram.com/radhafaarms/reel/Dcgmk3Zgfma/ |
 | `radha-logo.jpg` | https://www.instagram.com/radhafaarms/ |
 | `stemify-leon.mp4`, `stemify-leon.jpg` | https://www.instagram.com/stemify.ca/reel/DVjdZhuiJUj/ |
-| `stemify-waterloo.mp4`, `stemify-waterloo.jpg`, `stemify-preview.mp4` | https://www.instagram.com/stemify.ca/reel/DVbwUa1iNBZ/ |
+| `stemify-waterloo.mp4`, `stemify-waterloo.jpg` | https://www.instagram.com/stemify.ca/reel/DVbwUa1iNBZ/ |
 | `stemify-logo.jpg` | https://www.instagram.com/stemify.ca/ |
 | `megha-jain.jpg` | https://www.linkedin.com/in/megha-jain-1b14331a2/ |
 
@@ -65,6 +66,10 @@ The expanded motion includes staggered opening text and cards, independent hero 
 
 No Azure services, cloud backend, generated-video service or paid animation service are used by this website.
 
-The Stemify portfolio uses two original student feedback reels, with still frames extracted from those videos instead of blue promotional covers. These are examples from the managed account, not testimonials about Megha. Full reels load and play only on request, retain their original audio and embedded captions, and link to Instagram. An 89 KB, silent eight-second excerpt is used in the hero. The hero preview pauses offscreen, when the tab is hidden, or when motion is paused; reduced-motion users get the still poster. The local server supports MP4 byte ranges for seeking.
+The Stemify portfolio uses two original student feedback reels, with still frames extracted from those videos instead of blue promotional covers. These are examples from the managed account, not testimonials about Megha. Full reels load and play only on request, retain their original audio and embedded captions, and link to Instagram. The hero uses a silent, optimized version of Radha Farms’ Spider-Man reel, with its original wide framing and an Instagram link. The hero preview pauses offscreen, when the tab is hidden, or when motion is paused; reduced-motion users get the still poster. The local server supports MP4 byte ranges for seeking.
 
 The updated visual treatment includes an Allura signature wordmark, floating hero layers, a revolving orbit, animated headline entrances and underline, a continuous story ribbon, service-row sweeps, and more pronounced scroll-driven portfolio assembly. No animation library or external runtime dependency is required.
+
+## Brand Story identity
+
+The user chose Brand Story as the main website brand. `public/assets/brand-story.svg` is the primary logo, `brand-story-light.svg` is the light version for dark backgrounds, and `brand-story-mark.svg` is the standalone book/conversation symbol and favicon. All lettering is converted to vector paths, so the files work without installed fonts. The optional `scripts/create-logo.py` design utility regenerates them with fontTools; it is not part of the website build or runtime. Existing local font licenses apply to the outlined lettering.

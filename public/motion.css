@@ -132,3 +132,22 @@ html.motion-paused .title-line,html.motion-paused .service-row{opacity:1;transla
 html.motion-paused .hero-photo,html.motion-paused .note{translate:none;rotate:none}
 @media(prefers-reduced-motion:reduce){.title-line{opacity:1;translate:none;filter:none}.service-row.reveal-ready{translate:none}.photo-front{transform:rotate(-9deg)}.photo-back{transform:rotate(10deg)}.hero-photo,.note{translate:none;rotate:none}}
 html.tab-hidden *{animation-play-state:paused!important}
+
+/* Preserve the wide composition and caption in the Spider-Man reel. */
+.hero-landscape{width:310px;top:20px;z-index:3}
+.hero-landscape video{height:auto;aspect-ratio:16/9;object-fit:contain}
+.hero-art:has(.hero-landscape) .photo-front{top:158px}
+@media(max-width:1100px){.hero-landscape{width:265px;top:25px}.hero-art:has(.hero-landscape) .photo-front{top:150px}}
+@media(max-width:800px){.hero-landscape{width:220px;top:28px}.hero-art:has(.hero-landscape) .photo-front{top:145px}}
+@media(max-width:620px){.hero-landscape{width:69%;top:45px;right:7px}.hero-art:has(.hero-landscape){height:430px}.hero-art:has(.hero-landscape) .photo-front{top:155px}.hero-landscape .hero-video-label{font-size:7px}}
+@media(max-width:370px){.hero-art:has(.hero-landscape){height:405px}}
+
+/* Brand Story identity: outlined vector lettering stays consistent everywhere. */
+.brand-logo{display:block;width:255px;flex-shrink:0;padding:0;line-height:0}
+.brand-logo img{width:100%;height:auto}
+.brand-footer{display:block;margin:25px 0 15px;padding:0}
+.brand-footer img{width:100%;height:auto;max-height:300px}
+@media(max-width:1100px){.brand-logo{width:220px}.header nav{margin-right:8px;gap:24px}}
+@media(max-width:800px){.brand-logo{width:190px}.header nav{gap:15px}}
+@media(max-width:620px){.brand-logo{width:165px}.header{gap:10px}.header>.button{gap:10px;padding-inline:10px}.brand-footer{margin:24px 0}.brand-footer img{max-height:none}}
+@media(max-width:370px){.brand-logo{width:145px}.header{gap:8px}}
