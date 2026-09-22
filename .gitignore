@@ -1,0 +1,7 @@
+node_modules/
+dist/
+lab/
+.DS_Store
+.env*
+scrollcraft/
+megha-website.zip
