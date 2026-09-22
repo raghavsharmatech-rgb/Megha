@@ -13,6 +13,13 @@ const introStrip = $('.intro-strip');
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
 let pointerX = 0;
 let pointerY = 0;
+const ambientVideo = $('.ambient-video');
+let heroVisible = true;
+function syncAmbient() {
+  if (motionPaused || document.hidden || !heroVisible) { ambientVideo.pause(); return; }
+  if (!ambientVideo.getAttribute('src')) ambientVideo.src = ambientVideo.dataset.src;
+  ambientVideo.play().catch(() => {});
+}
 
 function visibleProgress(element, property, finishAt = .7) {
   const bounds = element.getBoundingClientRect();
@@ -45,6 +52,8 @@ function setMotion(paused) {
   document.documentElement.classList.toggle('motion-paused', paused);
   motionButton.setAttribute('aria-pressed', String(paused));
   motionButton.textContent = paused ? 'Resume animation' : 'Pause animation';
+  if (paused) document.querySelectorAll('.reel-frame video').forEach(video => video.pause());
+  syncAmbient();
   if (!paused) requestMotion();
 }
 motionButton.hidden = false;
@@ -52,7 +61,11 @@ motionButton.addEventListener('click', () => setMotion(!motionPaused));
 motionPreference.addEventListener('change', e => setMotion(e.matches));
 window.addEventListener('scroll', requestMotion, {passive:true});
 window.addEventListener('resize', requestMotion, {passive:true});
-document.addEventListener('visibilitychange', requestMotion);
+document.addEventListener('visibilitychange', () => {
+  requestMotion(); syncAmbient();
+  document.documentElement.classList.toggle('tab-hidden', document.hidden);
+  if (document.hidden) document.querySelectorAll('.reel-frame video').forEach(video => video.pause());
+});
 setMotion(motionPaused);
 art.addEventListener('pointermove', e => {
   if (motionPaused || !finePointer.matches) return;
@@ -127,3 +140,36 @@ $('#download-enquiry').addEventListener('click', () => {
 form.addEventListener('input', () => { $('#email-result').hidden = true; });
 $('#form-fields').disabled = false;
 $('#year').textContent = new Date().getFullYear();
+
+// Only the small silent hero preview plays automatically. Full stories are opt-in.
+if ('IntersectionObserver' in window) {
+  const mediaObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.target === art) {
+      heroVisible = entry.isIntersecting;
+      art.classList.toggle('is-offscreen', !heroVisible);
+      syncAmbient();
+    } else if (!entry.isIntersecting) entry.target.pause();
+  }), {threshold:.05});
+  mediaObserver.observe(art);
+  document.querySelectorAll('.reel-frame video').forEach(video => mediaObserver.observe(video));
+}
+document.querySelectorAll('.reel-play').forEach(button => {
+  const video = document.getElementById(button.dataset.video);
+  button.hidden = false;
+  video.controls = false;
+  button.addEventListener('click', async () => {
+    video.controls = true;
+    try { await video.play(); }
+    catch { button.hidden = true; }
+  });
+  video.addEventListener('play', () => {
+    video.classList.add('is-playing');
+    button.hidden = true;
+    document.querySelectorAll('.reel-frame video').forEach(other => { if (other !== video) other.pause(); });
+  });
+  video.addEventListener('ended', () => {
+    video.classList.remove('is-playing');
+    button.hidden = false;
+    video.controls = false;
+  });
+});
