@@ -5,5 +5,14 @@ Original reel: https://www.instagram.com/radhafaarms/reel/DdRf6sPgVVN/
 Images downloaded from the account supplied by the site owner on September 22, 2026.
 Copyright remains with the respective rights holders. No independent license is granted by this file.
 
+Stemify Instagram account: https://www.instagram.com/stemify.ca/
+Learning carousel: https://www.instagram.com/stemify.ca/p/DYU0ZlpE4qx/
+Coding post: https://www.instagram.com/stemify.ca/p/DX6t-2bk5H1/
+The site owner confirmed that Megha manages both featured Instagram accounts.
+
+Megha Jain portrait: https://www.linkedin.com/in/megha-jain-1b14331a2/
+Downloaded from the supplied LinkedIn profile at the site owner's explicit request.
+The portrait is displayed unchanged, with responsive cropping in CSS.
+
 Fonts: DM Sans and DM Serif Display, distributed under the SIL Open Font License.
 See DM-Sans-LICENSE.txt and DM-Serif-Display-LICENSE.txt.

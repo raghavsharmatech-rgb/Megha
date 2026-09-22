@@ -1,0 +1,55 @@
+/* Project-specific composition and motion. All content remains visible without JS. */
+.project-navigation{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;padding-bottom:9px}
+.project-navigation a{padding:10px 0;border-bottom:1px solid #9d8878}
+.stemify-project{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:60px;margin-top:85px;padding-top:74px;border-top:1px solid #d1c4b6;--stem-progress:0}
+.stemify-copy .project-name{margin-bottom:29px}
+.stemify-headline{font-family:var(--serif);font-size:clamp(34px,3.4vw,48px);line-height:1.08;letter-spacing:-.035em}
+.stemify-headline em{color:#8a513b}
+.stemify-description{font-size:13px;color:var(--muted);margin-top:24px;max-width:320px}
+.stemify-role{font-size:9px;letter-spacing:.1em;margin:28px 0 23px}
+.stemify-gallery{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start}
+.stemify-piece{display:block;min-width:0}
+.stemify-piece:first-child{transform:translateY(calc((1 - var(--stem-progress))*48px)) rotate(calc((1 - var(--stem-progress))*-5deg))}
+.stemify-piece:last-child{padding-top:70px;transform:translateY(calc((1 - var(--stem-progress))*80px)) rotate(calc((1 - var(--stem-progress))*5deg))}
+.stemify-gallery .portfolio-caption{flex-direction:column;align-items:flex-start;gap:3px}
+.stemify-gallery .portfolio-caption h4{font-size:12px}
+.portrait-card{position:relative;margin:0;align-self:center;min-width:0;width:100%}
+.portrait-frame{aspect-ratio:1/1.12;border-radius:46% 46% 4px 4px;overflow:hidden;background:#151313}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:52% 40%;transform:scale(calc(1.055 - var(--portrait-progress,0)*.045))}
+.portrait-card figcaption{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:20px;border-bottom:1px solid var(--line)}
+.portrait-card figcaption strong{display:block;font-size:18px;font-weight:500}
+.portrait-card figcaption span{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.portrait-card figcaption a{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;font-size:22px}
+.portrait-note{position:absolute;left:-25px;bottom:126px;background:var(--peach);padding:17px 21px;transform:rotate(-7deg) translateY(calc(var(--portrait-progress,0)*-16px));box-shadow:4px 12px 25px -14px #39291b70;font-family:var(--serif);font-size:22px;line-height:1.2;pointer-events:none}
+.hero-art{--front-travel:-75px;--back-travel:-35px;--note-travel:-90px}
+.photo-front{transform:translate3d(calc(var(--pointer-x,0)*12px),calc(var(--hero-progress,0)*var(--front-travel) + var(--pointer-y,0)*10px),0) rotate(calc(-9deg + var(--hero-progress,0)*6deg + var(--pointer-x,0)*2deg))}
+.photo-back{transform:translate3d(calc(var(--pointer-x,0)*-9px),calc(var(--hero-progress,0)*var(--back-travel) + var(--pointer-y,0)*-6px),0) rotate(calc(10deg - var(--hero-progress,0)*5deg))}
+.note{transform:translate3d(calc(var(--pointer-x,0)*16px),calc(var(--hero-progress,0)*var(--note-travel)),0) rotate(calc(6deg - var(--hero-progress,0)*3deg))}
+.hero-stamp{transform:rotate(calc(-13deg + var(--hero-progress,0)*24deg))}
+.consult-flower{transform:rotate(calc(var(--consult-progress,0)*65deg))}
+.strip-flower{transform:rotate(calc(var(--strip-progress,0)*90deg))}
+.motion-ready:not(.motion-paused) .hero-copy>*{animation:opening-copy .8s cubic-bezier(.2,.7,.2,1) backwards}
+.motion-ready:not(.motion-paused) .hero-copy>h1{animation-delay:.09s}
+.motion-ready:not(.motion-paused) .hero-description{animation-delay:.18s}
+.motion-ready:not(.motion-paused) .hero-copy>.button{animation-delay:.27s}
+.motion-ready:not(.motion-paused) .photo-back{animation:opening-card 1s cubic-bezier(.2,.7,.2,1) .15s backwards}
+.motion-ready:not(.motion-paused) .photo-front{animation:opening-card 1s cubic-bezier(.2,.7,.2,1) .3s backwards}
+.motion-ready:not(.motion-paused) .hero-stamp,.motion-ready:not(.motion-paused) .note{animation:opening-copy .8s cubic-bezier(.2,.7,.2,1) .45s backwards}
+.motion-ready .section-reveal{opacity:0;translate:0 32px;transition:opacity .8s cubic-bezier(.2,.7,.2,1),translate .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready .section-reveal.is-visible,.motion-ready .section-reveal:focus-within{opacity:1;translate:0 0}
+.motion-ready .service-row.reveal-ready{transform:translateY(25px);transition-duration:.65s}
+.motion-ready .service-row.is-visible,.motion-ready .service-row:focus{transform:none}
+@keyframes opening-copy{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+@keyframes opening-card{from{opacity:0;translate:0 45px}to{opacity:1;translate:0 0}}
+@media(hover:hover) and (pointer:fine){.project-navigation a:hover{color:#915137}.stemify-piece:hover img{transform:scale(1.025)}.portrait-card figcaption a:hover{background:var(--peach)}}
+@media(max-width:1000px){.stemify-project{gap:35px}.stemify-gallery{gap:18px}.stemify-copy .project-name{margin-bottom:22px}.stemify-headline{font-size:36px}.stemify-description{font-size:12px}.portrait-note{left:-15px;padding:14px 17px;font-size:20px}.portrait-frame{aspect-ratio:1/1.25}}
+@media(max-width:800px){.stemify-project{grid-template-columns:1fr;gap:35px}.stemify-copy{max-width:100%}.stemify-headline{font-size:43px}.stemify-description{max-width:430px}.stemify-gallery{gap:30px}.stemify-role{margin-block:19px}.portrait-note{font-size:18px;left:-12px;bottom:112px}.portrait-card figcaption strong{font-size:16px}.portrait-card figcaption span{font-size:10px}.project-navigation{gap:12px;font-size:11px}}
+@media(max-width:620px){.project-navigation{margin-top:25px;font-size:12px;gap:25px;padding-bottom:0}.project-navigation a{padding-block:7px}.stemify-project{margin-top:43px;padding-top:41px;gap:32px}.stemify-headline{font-size:39px}.stemify-description{font-size:13px;max-width:310px}.stemify-gallery{gap:17px}.stemify-piece:last-child{padding-top:45px}.stemify-gallery .portfolio-caption h4{font-size:11px}.stemify-gallery .portfolio-caption span{font-size:9px}.portrait-card{width:86%;max-width:340px;align-self:center;margin-bottom:6px}.portrait-frame{aspect-ratio:1/1.06}.portrait-card figcaption{padding-block:18px}.portrait-note{left:-18px;bottom:102px;font-size:19px}.hero-art{--front-travel:-36px;--back-travel:-16px;--note-travel:-40px}.art-caption{font-size:8px}.motion-ready .section-reveal{translate:0 18px}.motion-ready .section-reveal.is-visible,.motion-ready .section-reveal:focus-within{translate:0 0}}
+html.motion-paused .section-reveal{opacity:1;translate:none;transition:none}
+html.motion-paused .stemify-piece:nth-child(n){transform:none}
+html.motion-paused .portrait-frame img{transform:none}
+html.motion-paused .portrait-note{transform:rotate(-7deg)}
+html.motion-paused .hero-stamp{transform:rotate(-13deg)}
+html.motion-paused .strip-flower,html.motion-paused .consult-flower{transform:none}
+html.motion-paused .hero-copy>*,html.motion-paused .hero-photo,html.motion-paused .hero-stamp,html.motion-paused .note{animation:none!important;translate:none}
+@media(prefers-reduced-motion:reduce){.section-reveal{opacity:1!important;translate:none!important}.stemify-piece:nth-child(n),.portrait-frame img{transform:none}.portrait-note{transform:rotate(-7deg)}.hero-stamp{transform:rotate(-13deg)}.photo-front{transform:rotate(-9deg)}.photo-back{transform:rotate(10deg)}.note{transform:rotate(6deg)}.strip-flower,.consult-flower{transform:none}}

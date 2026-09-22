@@ -31,7 +31,8 @@ Automatic email delivery or appointment scheduling would require a connected for
 
 - Copy, links, email and portfolio: `public/index.html`.
 - Email draft destination and behavior: `public/app.js`. Update the destination in both HTML and JavaScript when changing the email address.
-- Colours, spacing, responsive design and motion: `public/styles.css`.
+- Colours, spacing and responsive design: `public/styles.css`.
+- Portfolio additions, portrait composition and enhanced animation: `public/motion.css` and `public/app.js`.
 - Images and self-hosted fonts: `public/assets/`.
 - Re-run `npm run build` after editing; source files in `public/` are authoritative.
 
@@ -39,7 +40,7 @@ Automatic email delivery or appointment scheduling would require a connected for
 
 The user supplied Megha's name, email, preferred visual style, Instagram account and LinkedIn profile, and delegated creative direction. The about paragraph reflects the account management, B2B sales and consultative selling background visible on the supplied LinkedIn profile, reviewed September 22, 2026.
 
-Instagram thumbnails were downloaded from the publicly rendered account supplied by the user. They are attributed and linked to their original posts. The user confirmed that **Megha manages the account overall**. The page describes her role as account management. It does not claim that Megha personally created each individual piece, and there are no invented results or testimonials.
+Instagram thumbnails were downloaded from the publicly rendered accounts supplied by the user. They are attributed and linked to their original posts. The user confirmed that **Megha manages both Radha Farms and Stemify**. The page describes her role as account management. It does not claim that Megha personally created each individual piece, and there are no invented results or testimonials. Megha's portrait was downloaded from her supplied LinkedIn profile at the user's explicit request.
 
 | Asset | Original |
 | --- | --- |
@@ -47,11 +48,19 @@ Instagram thumbnails were downloaded from the publicly rendered account supplied
 | `radha-plate.jpg` | https://www.instagram.com/radhafaarms/p/DdWcYisnB6o/ |
 | `radha-reel.jpg` | https://www.instagram.com/radhafaarms/reel/DdRf6sPgVVN/ |
 | `radha-logo.jpg` | https://www.instagram.com/radhafaarms/ |
+| `stemify-learning.jpg` | https://www.instagram.com/stemify.ca/p/DYU0ZlpE4qx/ |
+| `stemify-coding.jpg` | https://www.instagram.com/stemify.ca/p/DX6t-2bk5H1/ |
+| `stemify-logo.jpg` | https://www.instagram.com/stemify.ca/ |
+| `megha-jain.jpg` | https://www.linkedin.com/in/megha-jain-1b14331a2/ |
 
 LinkedIn: https://www.linkedin.com/in/megha-jain-1b14331a2/
 
-DM Sans and DM Serif Display are self-hosted with their SIL Open Font License files. Instagram images remain the property of their respective owners. The user selected this account for the portfolio and confirmed Megha’s account management role.
+DM Sans and DM Serif Display are self-hosted with their SIL Open Font License files. Instagram images remain the property of their respective owners. The user selected both accounts for the portfolio and confirmed Megha’s account management role.
 
 ## Accessibility and motion
 
 Semantic page structure, labeled inputs, native validation, visible focus states, a skip link, native FAQ disclosures, mobile navigation with Escape dismissal, and reduced-motion CSS are included. Animation uses native scroll, transforms and requestAnimationFrame, with no scroll hijacking or perpetual loop. A footer control pauses positional motion. Form data is only placed in a mailto link after explicit draft preparation.
+
+The expanded motion includes staggered opening text and cards, independent hero depth, pointer response on desktop, scroll-driven portfolio alignment, section entrances, a portrait reveal and rotating decorative accents. Reduced-motion preferences and the page's pause control preserve a complete static layout.
+
+No Azure services, cloud backend, generated-video service or paid animation service are used by this website.
